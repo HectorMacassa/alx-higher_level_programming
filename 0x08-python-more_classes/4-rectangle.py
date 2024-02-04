@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """This module defines a rectangle"""
 
+
 class Rectangle:
     """This class represents a rectangle"""
-    
+
     def __init__(self, width=0, height=0):
         """
         Initializes a new rectangle
