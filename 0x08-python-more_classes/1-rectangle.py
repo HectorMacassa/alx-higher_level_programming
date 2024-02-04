@@ -3,6 +3,7 @@
 This module defines a rectangle class
 """
 
+
 class Rectangle:
     """
     This class represents a rectangle
@@ -47,4 +48,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
