@@ -3,15 +3,15 @@
 
 class Square:
     """Defines a square"""
-   
-   def __init___(self, size=0):
+
+    def __init__(self, size=0):
         """Initializes a new square.
 
         Args:
             size (int): Size of the square
 
         """
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
@@ -20,7 +20,8 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Setter to obtain size of square
+        """
+        Setter to obtain size of square
 
         Args:
             value (int): Value given
