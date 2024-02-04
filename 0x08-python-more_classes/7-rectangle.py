@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines a rectangle"""
 
+
 class Rectangle:
     """
     This class represents a rectangle
@@ -11,7 +12,7 @@ class Rectangle:
 
     number_of_instances = 0
     print_symbol = "#"
-    
+
     def __init__(self, width=0, height=0):
         """
         Initializes a new rectangle
@@ -73,7 +74,8 @@ class Rectangle:
 
         rectangle = []
         for i in range(self.__height):
-            [rectangle.append(str(self.print_symbol)) for j in range(self.__width)]
+            [rectangle.append(str(self.print_symbol))
+                    for j in range(self.__width)]
             if i != self.__height - 1:
                 rectangle.append("\n")
         return ("".join(rectangle))
@@ -88,4 +90,3 @@ class Rectangle:
         """Prints a message for every deletion of a rectangle"""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
-
