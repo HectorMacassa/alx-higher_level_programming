@@ -25,5 +25,6 @@ def add_item(args):
     data.extend(args)
     save_to_json_file(data, file_name)
 
+
 if __name__ == "__main__":
     add_item(sys.argv[1:])
