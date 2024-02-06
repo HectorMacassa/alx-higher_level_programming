@@ -14,6 +14,10 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
 def add_item(args):
+    """
+    This function checks if file exists, adds arguments to the list
+    and saves the list to JSON file
+    """
     file_name = "add_item.json"
     data = []
     if path.exists(file_name):
