@@ -1,0 +1,60 @@
+case 1: Importing class:
+------------------------------
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+case 2: Multiple positive integer validations:
+-----------------------------------------------
+    >>> base_geo = BaseGeometry()
+    >>> base_geo.integer_validator("length", 1556)
+    >>> base_geo.integer_validator("width", 10)
+    >>> base_geo.integer_validator("height", 20)
+
+
+case 3: Validating with zero and positive integers:
+----------------------------------------------------
+    >>> base_geo = BaseGeometry()
+    >>> base_geo.integer_validator("length", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: length must be greater than 0
+    >>> base_geo.integer_validator("width", 20)
+    >>> base_geo.integer_validator("height", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: height must be greater than 0
+
+
+case 4: Validating with negative integers and zero:
+----------------------------------------------------
+    >>> base_geo = BaseGeometry()
+    >>> base_geo.integer_validator("length", -5)
+    Traceback (most recent call last):
+        ...
+    ValueError: length must be greater than 0
+    >>> base_geo.integer_validator("width", -10)
+    Traceback (most recent call last):
+        ...
+    ValueError: width must be greater than 0
+    >>> base_geo.integer_validator("height", -20)
+    Traceback (most recent call last):
+        ...
+    ValueError: height must be greater than 0
+
+
+case 5: Validating with non-integer values:
+--------------------------------------------
+    >>> base_geo = BaseGeometry()
+    >>> base_geo.integer_validator("length", 15.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: length must be an integer
+    >>> base_geo.integer_validator("width", "10")
+    Traceback (most recent call last):
+        ...
+    TypeError: width must be an integer
+    >>> base_geo.integer_validator("height", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: height must be an integer
+
