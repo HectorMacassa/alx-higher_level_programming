@@ -6,14 +6,11 @@ from models.base import Base
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__()
-        if x != 0:
-            self.__x = x
-        if y != 0:
-            self.__y = y
-        else:
-            self.__width = width
-            self.__height = height
+        super().__init__(id)
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -71,3 +68,6 @@ class Rectangle(Base):
                 j += 1
             print("")
             i += 1
+
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
