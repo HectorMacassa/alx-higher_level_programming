@@ -6,7 +6,7 @@ from models.base import Base
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
+        super().__init__()
         self.__width = width
         self.__height = height
         self.__x = x
@@ -42,7 +42,9 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        if value < 0:
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        elif value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
@@ -52,7 +54,9 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        if value < 0:
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
 
@@ -84,4 +88,14 @@ class Rectangle(Base):
                 self.__x = value
             elif key == "y":
                 self.__y == value
+
+    def to_dictionary(self):
+
+        return {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y,
+                }
 
