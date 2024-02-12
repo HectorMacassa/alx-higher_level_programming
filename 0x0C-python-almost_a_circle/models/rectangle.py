@@ -60,14 +60,28 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        i = 0
-        while i < self.__height:
-            j = 0
-            while j < self.__width:
-                print(end="#")
-                j += 1
-            print("")
-            i += 1
+        for _ in range(self.__y):
+            print()
+        for i in range(self.__height):
+            row = ""
+            row += " " * self.__x
+            row += "#" * self.__width
+            print(row)
 
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+    def update(self, *args, **kwargs):
+
+        for key, value in kwargs.items():
+            if key == "id":
+                self.__id = value
+            elif key == "width":
+                self.__width = value
+            elif key == "height":
+                self.__height = value
+            elif key == "x":
+                self.__x = value
+            elif key == "y":
+                self.__y == value
+
