@@ -73,7 +73,8 @@ class Rectangle(Base):
             print(row)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return
+    f"[Rectangle]({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
 
@@ -87,15 +88,14 @@ class Rectangle(Base):
             elif key == "x":
                 self.__x = value
             elif key == "y":
-                self.__y == value
+                self.__y = value
 
     def to_dictionary(self):
 
         return {
-                "id": self.id,
-                "width": self.width,
-                "height": self.height,
-                "x": self.x,
-                "y": self.y,
+                "id": self.i__id,
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y,
                 }
-
