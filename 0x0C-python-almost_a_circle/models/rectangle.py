@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import json
 
 from models.base import Base
 
@@ -6,7 +7,7 @@ from models.base import Base
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__()
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
@@ -73,8 +74,7 @@ class Rectangle(Base):
             print(row)
 
     def __str__(self):
-        return
-    f"[Rectangle]({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.__id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
 
@@ -93,9 +93,9 @@ class Rectangle(Base):
     def to_dictionary(self):
 
         return {
-                "id": self.i__id,
-                "width": self.__width,
-                "height": self.__height,
-                "x": self.__x,
-                "y": self.__y,
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y,
                 }
