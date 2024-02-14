@@ -5,13 +5,32 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """
+    Represents a rectangle with specific properties.
+
+    Inherits from the Base class.
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
+        """
+        Initializes a Rectangle object.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
+            y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
+            id (str, optional): An optional identifier for the rectangle. Defaults to None.
+
+        Raises:
+            TypeError: If width or height is not an integer.
+            ValueError: If width or height is less than or equal to 0, or if x or y is negative.
+        """
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -93,9 +112,9 @@ class Rectangle(Base):
     def to_dictionary(self):
 
         return {
-                "id": self.id,
-                "width": self.width,
-                "height": self.height,
-                "x": self.x,
-                "y": self.y,
+                "id": self.__id,
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y,
                 }

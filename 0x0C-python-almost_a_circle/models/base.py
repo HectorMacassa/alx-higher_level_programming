@@ -64,3 +64,31 @@ class Base:
         else:
             json_list = json.loads(json_string)
             return json_list
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Loads a list of instances from a JSON file.
+
+        Returns:
+            list: A list of instances of the class, or an empty list if the file doesn't exist.
+        """
+
+        filename = f"{cls.__name__}.json"
+        try:
+            with open(filename, "r") as file:
+                json_string = file.read()
+                instances = cls.from_json_string(json_string)
+                return instances
+        except FileNotFoundError:
+            return []
+
