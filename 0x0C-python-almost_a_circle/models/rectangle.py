@@ -95,15 +95,10 @@ class Rectangle(Base):
 
     def display(self):
         """Prints in stdout the Rectangle instance with the character #"""
-        i = 0
-
-        while i < self.height:
-            j = 0
-            while j < self.width:
-                print(end="#")
-                j += 1
-            print("")
-            i += 1
+        for _ in range(self.y):
+            print()
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """Overrides the __str__ method"""
