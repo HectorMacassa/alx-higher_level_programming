@@ -33,12 +33,10 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-    """Gets the value of width"""
     def width(self):
         return self.__width
 
     @width.setter
-    """Sets the value of width"""
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -47,12 +45,10 @@ class Rectangle(Base):
         self.__width = value
 
     @property
-    """Gets the value of height"""
     def height(self):
         return self.__height
 
     @height.setter
-    """Sets the value of height"""
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -61,12 +57,10 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    """Gets the value of x"""
     def x(self):
         return self.__x
 
     @x.setter
-    """Sets the value of x"""
     def x(self, value):
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -75,12 +69,10 @@ class Rectangle(Base):
         self.__x = value
 
     @property
-    """Gets the value of y"""
     def y(self):
         return self.__y
 
     @y.setter
-    """Sets the value of y"""
     def y(self, value):
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
@@ -89,5 +81,4 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Returns the area of the rectangle"""
         return self.width * self.height
