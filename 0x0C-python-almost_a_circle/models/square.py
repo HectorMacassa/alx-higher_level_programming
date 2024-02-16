@@ -28,13 +28,13 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     @property
-    """Gets the size of the square"""
     def size(self):
+        """Gets the size of the square"""
         return self.width
 
     @size.setter
-    """Sets the size of the square"""
     def size(self, value):
+        """Sets the size of the square"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
