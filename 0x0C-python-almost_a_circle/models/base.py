@@ -82,12 +82,10 @@ class Base:
             list: A list of instances of the class,
             or an empty list if the file doesn't exist.
         """
-
-        filename = f"{cls.__name__}.json"
+        filename = cls.__name__ + "j.son"
         try:
             with open(filename, "r") as file:
-                json_string = file.read()
-                instances = cls.from_json_string(json_string)
-                return instances
+                json_string = cls.from_json_string(file.read())
+                return [cls.create(**d) for i in json_string]
         except FileNotFoundError:
             return []
