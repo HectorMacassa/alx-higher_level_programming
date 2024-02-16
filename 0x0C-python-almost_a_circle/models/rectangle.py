@@ -26,10 +26,10 @@ class Rectangle(Base):
             ValueError: If width or height is less than or equal to 0,
             or if x or y is negative.
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
