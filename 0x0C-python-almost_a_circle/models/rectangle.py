@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-import json
-
+"""This module defines a Rectangle class that inherits froom Base"""
 from models.base import Base
 
 
@@ -18,13 +17,14 @@ class Rectangle(Base):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
-            y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
-            id (str, optional): An optional identifier for the rectangle. Defaults to None.
+            x (int, optional): The x-coordinate of the rectangle's position.
+            y (int, optional): The y-coordinate of the rectangle's position.
+            id (str, optional): An optional identifier for the rectangle.
 
         Raises:
             TypeError: If width or height is not an integer.
-            ValueError: If width or height is less than or equal to 0, or if x or y is negative.
+            ValueError: If width or height is less than or equal to 0,
+            or if x or y is negative.
         """
         self.__width = width
         self.__height = height
@@ -93,7 +93,9 @@ class Rectangle(Base):
             print(row)
 
     def __str__(self):
-        return f"[Rectangle] ({self.__id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)
 
     def update(self, *args, **kwargs):
 
