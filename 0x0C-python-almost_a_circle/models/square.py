@@ -17,9 +17,9 @@ class Square(Rectangle):
 
         Args:
             size (int): The length of one side of the square.
-            x (int, optional): The x-coordinate of the square's position. Defaults to 0.
-            y (int, optional): The y-coordinate of the square's position. Defaults to 0.
-            id (str, optional): An optional identifier for the square. Defaults to None.
+            x (int, optional): The x-coordinate of the square's position.
+            y (int, optional): The y-coordinate of the square's position.
+            id (str, optional): An optional identifier for the square.
 
         Raises:
             TypeError: If size is not an integer.
@@ -28,10 +28,12 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     @property
+    """Gets the size of the square"""
     def size(self):
         return self.width
 
     @size.setter
+    """Sets the size of the square"""
     def size(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -45,10 +47,11 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
+        """Overwrites the string method"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     def update(self, *args, **kwargs):
-
+        """Assigns attributes"""
         for key, value in kwargs.items():
             if key == "id":
                 self.id = value
@@ -60,7 +63,7 @@ class Square(Rectangle):
                 self.y = value
 
     def to_dictionary(self):
-
+        """Returns the dictionary representation of a Rectangle"""
         return {
                 "id": self.id,
                 "size": self.size,
