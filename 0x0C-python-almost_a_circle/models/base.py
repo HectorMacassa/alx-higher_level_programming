@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This module defines a class Base"""
+"""
+This module defines a class Base
+"""
 import json
 
 
@@ -80,7 +82,8 @@ class Base:
         Loads a list of instances from a JSON file.
 
         Returns:
-            list: A list of instances of the class, or an empty list if the file doesn't exist.
+            list: A list of instances of the class,
+            or an empty list if the file doesn't exist.
         """
 
         filename = f"{cls.__name__}.json"
@@ -91,4 +94,3 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
-
