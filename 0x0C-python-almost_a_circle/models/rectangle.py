@@ -93,9 +93,10 @@ class Rectangle(Base):
             print(row)
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                       self.x, self.y,
-                                                       self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id(),
+                                                       self.x(), self.y(),
+                                                       self.width(),
+                                                       self.height())
 
     def update(self, *args, **kwargs):
 
