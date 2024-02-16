@@ -44,15 +44,19 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Assigns attributes"""
-        for key, value in kwargs.items():
-            if key == "id":
-                self.id = value
-            elif key == "size":
-                self.size = value
-            elif key == "x":
-                self.x = value
-            elif key == "y":
-                self.y = value
+        if args:
+            num_args = len(args)
+            if num_args >= 1:
+                self.id = args[0]
+            if num_args >= 2:
+                self.size = args[1]
+            if num_args >= 3:
+                self.x = args[2]
+            if num_args >= 4:
+                self.y = args[3]
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
