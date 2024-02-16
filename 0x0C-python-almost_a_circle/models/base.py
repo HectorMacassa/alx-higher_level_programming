@@ -57,21 +57,20 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        json_list = []
-        if json_string is None:
-            return json_list
+        """Returns a new list of the JSON string rep"""
+        if json_string is None or json_string == "":
+            return []
         else:
-            json_list = json.loads(json_string)
-            return json_list
+            return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
-        else:
-            dummy = cls(1)
-        dummy.update(**dictionary)
-        return dummy
+            new_instance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            new_instance = cls(1)
+        new_instance.update(**dictionary)
+        return new_instance
 
     @classmethod
     def load_from_file(cls):
