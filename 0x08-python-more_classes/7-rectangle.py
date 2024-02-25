@@ -45,7 +45,7 @@ class Rectangle:
         return self.__height
 
     @height.setter
-    def heigth(self, value):
+    def height(self, value):
         """Sets the height of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -75,7 +75,7 @@ class Rectangle:
         rectangle = []
         for i in range(self.__height):
             [rectangle.append(str(self.print_symbol))
-                    for j in range(self.__width)]
+                for j in range(self.__width)]
             if i != self.__height - 1:
                 rectangle.append("\n")
         return ("".join(rectangle))
