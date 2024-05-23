@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-function getMovieCount(apiUrl) {
+function getMovieCount (apiUrl) {
   const wedgeAntillesId = 18;
   const options = {
     url: apiUrl,

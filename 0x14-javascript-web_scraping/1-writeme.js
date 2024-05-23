@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-function writeToFile(filePath, content) {
+function writeToFile (filePath, content) {
   try {
     fs.writeFileSync(filePath, content, 'utf8');
   } catch (err) {

@@ -3,7 +3,7 @@
 const request = require('request');
 const fs = require('fs');
 
-function getWebpageAndSaveToFile(url, filePath) {
+function getWebpageAndSaveToFile (url, filePath) {
   request(url, (error, response, body) => {
     if (error) {
       console.error(error);

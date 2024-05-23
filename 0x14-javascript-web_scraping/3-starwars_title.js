@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-function getMovieTitle(episodeId) {
+function getMovieTitle (episodeId) {
   const url = `https://swapi-api.alx-tools.com/api/films/${episodeId}`;
 
   request.get(url, (error, response, body) => {

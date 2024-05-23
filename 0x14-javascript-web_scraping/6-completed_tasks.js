@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-function getCompletedTasks(apiUrl) {
+function getCompletedTasks (apiUrl) {
   request(apiUrl, (error, response, body) => {
     if (error) {
       console.error(error);
