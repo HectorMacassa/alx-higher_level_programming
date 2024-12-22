@@ -7,7 +7,7 @@ exports.esrever = function (list) {
     list[len] = list[i];
     list[i] = temp;
     i++;
-    len --;
+    len--;
   }
   return list;
 };
